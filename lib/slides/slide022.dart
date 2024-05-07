@@ -14,13 +14,13 @@ class Slide022 extends StatelessWidget {
             flex: 1,
             child: OrderedList(
               numberOfItems: 5, 
-              activeItem: 2,
-              activeItems: ['Initialize a cameraView', 'Load the model'],
+              activeItem: 3,
+              activeItems: ['Initialize a cameraView', 'Load the model', 'Start an image stream'],
             ),
           ),
           Expanded(
             flex: 1,
-            child: Image.asset("assets/images/load_yolo.png"),
+            child: Image.asset("assets/images/start_stream.png"),
           ),
         ],
       ),

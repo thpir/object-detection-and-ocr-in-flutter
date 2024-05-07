@@ -1,3 +1,4 @@
+import 'package:cv_and_ocr_in_flutter/slides/widgets/ordered_detail_list.dart';
 import 'package:flutter/material.dart';
 
 class Slide028 extends StatelessWidget {
@@ -5,23 +6,29 @@ class Slide028 extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Padding(
-      padding: const EdgeInsets.symmetric(horizontal: 128),
-      child: Column(
-        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+    return const Padding(
+      padding: EdgeInsets.symmetric(horizontal: 128),
+      child: Row(
         children: [
-          const Text(
-            "OCR (Optical Character Recognition) converts virtually any kind of image containing written test (typed, handwritten, or printed) into machine readable text data. = subset of AI",
-            style: TextStyle(
-              color: Colors.black,
-              fontSize: 42,
+          Expanded(
+            flex: 1,
+            child: OrderedDetailList(
+              numberOfItems: 5, 
+              activeItem: 5,
+              titles: [
+                "Preprocessing", 
+                "Document analysis", 
+                "Segmentation", 
+                "Character recognition", 
+                "Output"],
+              details: [
+                "Gray scaling, resizing, straightening a skewed image,…", 
+                "Analyzing image to identify different regions containing text", 
+                "Separating individual lines and characters from the image", 
+                "Recognize each individual character in the image and convert it into a corresponding digital code", 
+                "Return the List of strings (per textbox)"],
             ),
           ),
-          Image.asset(
-            "assets/images/ocr_orc.png",
-            height: 550,
-            fit: BoxFit.contain,
-          )
         ],
       ),
     );

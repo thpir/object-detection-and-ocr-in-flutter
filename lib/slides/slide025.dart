@@ -1,4 +1,3 @@
-import 'package:cv_and_ocr_in_flutter/slides/widgets/ordered_list.dart';
 import 'package:flutter/material.dart';
 
 class Slide025 extends StatelessWidget {
@@ -7,23 +6,21 @@ class Slide025 extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: const EdgeInsets.symmetric(horizontal: 128),
-      child: Row(
-        children: [
-          const Expanded(
-            flex: 1,
-            child: OrderedList(
-              numberOfItems: 5, 
-              activeItem: 5,
-              activeItems: ['Initialize a cameraView', 'Load the model', 'Start an image stream', 'Apply model on a frame', 'Do something with result'],
+        padding: const EdgeInsets.symmetric(horizontal: 128),
+        child: Stack(
+          children: [
+            Image.asset("assets/images/app_clamp_detection.png"),
+            const SizedBox(
+              width: 600,
+              child: Text(
+                "A button is enabled when a clamp is detected.",
+                style: TextStyle(
+                  color: Colors.black,
+                  fontSize: 42,
+                ),
+              ),
             ),
-          ),
-          Expanded(
-            flex: 1,
-            child: Image.asset("assets/images/draw_boxes.png"),
-          ),
-        ],
-      ),
-    );
+          ],
+        ));
   }
 }

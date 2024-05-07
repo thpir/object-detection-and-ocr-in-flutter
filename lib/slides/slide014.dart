@@ -1,4 +1,3 @@
-import 'package:cv_and_ocr_in_flutter/slides/widgets/unordered_list_item.dart';
 import 'package:flutter/material.dart';
 
 class Slide014 extends StatelessWidget {
@@ -8,36 +7,51 @@ class Slide014 extends StatelessWidget {
   Widget build(BuildContext context) {
     return Padding(
       padding: const EdgeInsets.symmetric(horizontal: 128),
-      child: Column(
-        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+      child: Row(
         children: [
-          const UnorderedListItem(
-            fontSize: 40,
-            bodyText: "How to detect a valid connection between trailer and silo?",
-          ),
-          const Padding(
-            padding: EdgeInsets.only(left: 50),
-            child: UnorderedListItem(
-              fontSize: 40,
-              bodyText: "Male / female clamp connection",
-              bulletPoint: "➜",
+          Expanded(
+            flex: 2,
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: [
+                RichText(
+                  text: const TextSpan(
+                    style: TextStyle(
+                      fontSize: 40,
+                      color: Colors.black
+                    ),
+                    children: [
+                      TextSpan(text: "Next: ", style: TextStyle(fontWeight: FontWeight.bold)),
+                      TextSpan(text: "label all the data… 😴 and exporting your labeled dataset. ")
+                    ]
+                  )
+                ),
+                RichText(
+                  text: const TextSpan(
+                    style: TextStyle(
+                      fontSize: 40,
+                      color: Colors.black
+                    ),
+                    children: [
+                      TextSpan(text: "Tools: ", style: TextStyle(fontWeight: FontWeight.bold)),
+                      TextSpan(text: "CVAT (online), Supervisely (online) or LabelImg (local)")
+                    ]
+                  )
+                ),
+                Center(
+                  child: Image.asset(
+                    "assets/images/qr_supervisely.png",
+                    scale: 1.2,
+                  ),
+                )
+              ],
             ),
           ),
-          const UnorderedListItem(
-            fontSize: 40,
-            highlightedText: "Problem: ",
-            bodyText: "Many different clamp types and connections. In total more than 400 different types = not possible acquire, label and train all possibilities",
-          ),
-          const Padding(
-            padding: EdgeInsets.only(left: 50),
-            child: UnorderedListItem(
-              fontSize: 40,
-              highlightedText: "Solution: ",
-              bodyText: "design generic clamp permanently attached to hose from trailer",
-              bulletPoint: "➜",
-            ),
-          ),
-          Image.asset("assets/images/clamp_detection_process.png", height: 380,)
+          Expanded(
+            flex: 3,
+            child: Image.asset("assets/images/supervisely_screenshot.png")
+          )
         ],
       ),
     );

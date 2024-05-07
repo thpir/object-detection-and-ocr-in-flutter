@@ -7,54 +7,97 @@ class Slide009 extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: const EdgeInsets.only(left: 64.0),
+      padding: const EdgeInsets.only(left: 128.0),
       child: Row(
         children: [
           const Expanded(
-            flex: 5,
+            flex: 2,
             child: Column(
-              mainAxisAlignment: MainAxisAlignment.spaceAround,
-              crossAxisAlignment: CrossAxisAlignment.center,
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                UnorderedListItem(
-                  fontSize: 46,
-                  highlightedText: "Financial: ",
-                  bodyText: "Customers do not want to pay for tag-readers",
+                Padding(
+                  padding: EdgeInsets.symmetric(vertical: 30),
+                  child: Text(
+                    "Development of a smartphone application that:",
+                    style: TextStyle(
+                      fontSize: 46,
+                      color: Colors.black,
+                      fontWeight: FontWeight.bold
+                      ),
+                    ),
                 ),
                 UnorderedListItem(
                   fontSize: 46,
-                  highlightedText: "Human error: ",
-                  bodyText: "Sometimes tag on pipe A, but hose on pipe B",
+                  bodyText: "Replaces the Silo tag-reader and therefore eliminates the hardware cost for the customer",
                 ),
                 UnorderedListItem(
                   fontSize: 46,
-                  highlightedText: "Marketing: ",
-                  bodyText: "System is outdated",
+                  bodyText: "Makes the unloading process dummy-proof",
+                ),
+                Padding(
+                  padding: EdgeInsets.symmetric(vertical: 30),
+                  child: Text(
+                    "How?",
+                    style: TextStyle(
+                    fontSize: 46,
+                    color: Colors.black,
+                    fontWeight: FontWeight.bold
+                  ),
+                  ),
                 ),
                 UnorderedListItem(
                   fontSize: 46,
-                  highlightedText: "Timing: ",
-                  bodyText: "30 Days for solution & Proof-Of-Concept",
+                  bodyText: "Object detection for hose / pipe connection check",
                 ),
+                UnorderedListItem(
+                  fontSize: 46,
+                  bodyText: "OCR for reading the silo number",
+                )
               ],
             ),
           ),
           Expanded(
-            flex: 6,
-            child: Row(
-              mainAxisAlignment: MainAxisAlignment.spaceAround,
-              children: [
-                Image.asset(
-                  'assets/images/silos_in_the_wild_2.jpg',
+            flex: 1,
+            child: Image.asset(
+                  'assets/images/silo_connect_homepage.png',
                   fit: BoxFit.fitHeight,
                 ),
-                Image.asset(
-                  'assets/images/silos_in_the_wild_1.jpg',
-                  fit: BoxFit.fitHeight,
-                ),
-              ],
-            ),
           )
+        ],
+      ),
+    );
+  }
+}
+
+class Bullet extends StatelessWidget {
+  final String text;
+  const Bullet({required this.text, super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return Padding(
+      padding: const EdgeInsets.symmetric(vertical: 20, horizontal: 40),
+      child: Row(
+        crossAxisAlignment: CrossAxisAlignment.center,
+        children: <Widget>[
+          const Text(
+            "• ",
+            style: TextStyle(
+              fontSize: 46,
+              color: Colors.black
+            ),
+          ),
+          const SizedBox(width: 20),
+          Expanded(
+            child: Text(
+              text,
+              style: const TextStyle(
+                  fontSize: 46,
+                  color: Colors.black
+                )
+            ),
+          ),
         ],
       ),
     );

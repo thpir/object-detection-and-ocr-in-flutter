@@ -1,3 +1,4 @@
+import 'package:cv_and_ocr_in_flutter/slides/widgets/unordered_list_item.dart';
 import 'package:flutter/material.dart';
 
 class Slide015 extends StatelessWidget {
@@ -9,48 +10,81 @@ class Slide015 extends StatelessWidget {
       padding: const EdgeInsets.symmetric(horizontal: 128),
       child: Row(
         children: [
-          Expanded(
+          const Expanded(
             flex: 2,
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
-                RichText(
-                  text: const TextSpan(
-                    style: TextStyle(
-                      fontSize: 40,
-                      color: Colors.black
-                    ),
-                    children: [
-                      TextSpan(text: "Next: ", style: TextStyle(fontWeight: FontWeight.bold)),
-                      TextSpan(text: "label all the data… 😴 and exporting your labeled dataset. ")
-                    ]
-                  )
-                ),
-                RichText(
-                  text: const TextSpan(
-                    style: TextStyle(
-                      fontSize: 40,
-                      color: Colors.black
-                    ),
-                    children: [
-                      TextSpan(text: "Tools: ", style: TextStyle(fontWeight: FontWeight.bold)),
-                      TextSpan(text: "CVAT or Supervisely")
-                    ]
-                  )
-                ),
-                Center(
-                  child: Image.asset(
-                    "assets/images/qr_supervisely.png",
-                    scale: 1.2,
+                Text(
+                  "Exporting the data results in a folder structure with:",
+                  style: TextStyle(
+                    fontSize: 40,
+                    color: Colors.black
                   ),
-                )
+                ),
+                UnorderedListItem(
+                  fontSize: 40,
+                  highlightedText: "Images",
+                ),
+                Padding(
+                  padding: EdgeInsets.only(left: 120), 
+                  child: Text(
+                    "1. Train", 
+                    style: TextStyle(
+                      fontSize: 40,
+                      color: Colors.black
+                    ),
+                  ),
+                ),
+                Padding(
+                  padding: EdgeInsets.only(left: 120), 
+                  child: Text(
+                    "2. Val", 
+                    style: TextStyle(
+                      fontSize: 40,
+                      color: Colors.black
+                    ),
+                  ),
+                ),
+                UnorderedListItem(
+                  fontSize: 40,
+                  highlightedText: "Labels",
+                ),
+                Padding(
+                  padding: EdgeInsets.only(left: 120), 
+                  child: Text(
+                    "1. Train", 
+                    style: TextStyle(
+                      fontSize: 40,
+                      color: Colors.black
+                    ),
+                  ),
+                ),
+                Padding(
+                  padding: EdgeInsets.only(left: 120), 
+                  child: Text(
+                    "2. Val", 
+                    style: TextStyle(
+                      fontSize: 40,
+                      color: Colors.black
+                    ),
+                  ),
+                ),
+                SizedBox(height: 40),
+                Text(
+                  "The labels are .txt files that have the same file name as the corresponding image",
+                  style: TextStyle(
+                    fontSize: 40,
+                    color: Colors.black
+                  ),
+                ),
               ],
             ),
           ),
           Expanded(
             flex: 3,
-            child: Image.asset("assets/images/supervisely_screenshot.png")
+            child: Image.asset("assets/images/label_file_explanation.png")
           )
         ],
       ),

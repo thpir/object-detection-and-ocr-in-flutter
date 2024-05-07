@@ -5,15 +5,24 @@ class Slide027 extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const Center(
-      child: Text(
-        "OCR in Flutter",
-        style: TextStyle(
-          fontFamily: 'Nunito',
-          fontSize: 80,
-          color: Colors.white,
-          fontWeight: FontWeight.bold,
-        ),
+    return Padding(
+      padding: const EdgeInsets.symmetric(horizontal: 128),
+      child: Column(
+        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+        children: [
+          const Text(
+            "OCR (Optical Character Recognition) converts virtually any kind of image containing written test (typed, handwritten, or printed) into machine readable text data. = subset of AI",
+            style: TextStyle(
+              color: Colors.black,
+              fontSize: 42,
+            ),
+          ),
+          Image.asset(
+            "assets/images/ocr_orc.png",
+            height: 550,
+            fit: BoxFit.contain,
+          )
+        ],
       ),
     );
   }

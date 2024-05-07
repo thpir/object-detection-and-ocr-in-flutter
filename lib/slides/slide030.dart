@@ -1,4 +1,4 @@
-import 'package:cv_and_ocr_in_flutter/slides/widgets/unordered_list_item.dart';
+import 'package:cv_and_ocr_in_flutter/slides/widgets/ordered_list.dart';
 import 'package:flutter/material.dart';
 
 class Slide030 extends StatelessWidget {
@@ -11,34 +11,16 @@ class Slide030 extends StatelessWidget {
       child: Row(
         children: [
           const Expanded(
-            flex: 3,
-            child: Center(
-              child: Column(
-                mainAxisAlignment: MainAxisAlignment.center,
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  UnorderedListItem(
-                    fontSize: 46,
-                    highlightedText: "Package:",
-                    bodyText: " google_mlkit_text_recognition",
-                  ),
-                  UnorderedListItem(
-                    fontSize: 46,
-                    bodyText: "Out-of-the-box OCR, ready to use",
-                  ),
-                  UnorderedListItem(
-                    fontSize: 46,
-                    bodyText: "Flutter plugin to use Google's ML Kit Text Recognition",
-                  )
-                ],
-              )
-            )
+            flex: 1,
+            child: OrderedList(
+              numberOfItems: 4, 
+              activeItem: 1,
+              activeItems: ['Pauze the object detection'],
+            ),
           ),
           Expanded(
-            flex: 2,
-            child: Center(
-              child: Image.asset("assets/images/qr_ocr.png")
-            )
+            flex: 1,
+            child: Image.asset("assets/images/ocr_in_flutter.png"),
           ),
         ],
       ),

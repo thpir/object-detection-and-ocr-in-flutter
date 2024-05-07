@@ -57,7 +57,7 @@ class HowestContentSlide extends FlutterDeckSlideWidget {
                           Padding(
                             padding: const EdgeInsets.only(left: 100),
                             child: Text(
-                                "${DateFormat('dd/MM/yyyy').format(DateTime.now())} - CV & OCR in Flutter - Thijs Pirmez",
+                                "${DateFormat('dd/MM/yyyy').format(DateTime.now())} - Object detection & OCR in Flutter - Thijs Pirmez",
                                 style: const TextStyle(
                                   color: HowestStyle.onPrimaryColor,
                                   fontSize: 25,

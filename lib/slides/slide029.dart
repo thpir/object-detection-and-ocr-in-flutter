@@ -1,4 +1,4 @@
-import 'package:cv_and_ocr_in_flutter/slides/widgets/ordered_detail_list.dart';
+import 'package:cv_and_ocr_in_flutter/slides/widgets/unordered_list_item.dart';
 import 'package:flutter/material.dart';
 
 class Slide029 extends StatelessWidget {
@@ -6,28 +6,39 @@ class Slide029 extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const Padding(
-      padding: EdgeInsets.symmetric(horizontal: 128),
+    return Padding(
+      padding: const EdgeInsets.symmetric(horizontal: 128),
       child: Row(
         children: [
+          const Expanded(
+            flex: 3,
+            child: Center(
+              child: Column(
+                mainAxisAlignment: MainAxisAlignment.center,
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  UnorderedListItem(
+                    fontSize: 46,
+                    highlightedText: "Package:",
+                    bodyText: " google_mlkit_text_recognition",
+                  ),
+                  UnorderedListItem(
+                    fontSize: 46,
+                    bodyText: "Out-of-the-box OCR, ready to use",
+                  ),
+                  UnorderedListItem(
+                    fontSize: 46,
+                    bodyText: "Flutter plugin to use Google's ML Kit Text Recognition",
+                  )
+                ],
+              )
+            )
+          ),
           Expanded(
-            flex: 1,
-            child: OrderedDetailList(
-              numberOfItems: 5, 
-              activeItem: 5,
-              titles: [
-                "Preprocessing", 
-                "Document analysis", 
-                "Segmentation", 
-                "Character recognition", 
-                "Output"],
-              details: [
-                "Gray scaling, resizing, straightening a skewed image,…", 
-                "Analyzing image to identify different regions containing text", 
-                "Separating individual lines and characters from the image", 
-                "Recognize each individual character in the image and convert it into a corresponding digital code", 
-                "Return the List of strings (per textbox)"],
-            ),
+            flex: 2,
+            child: Center(
+              child: Image.asset("assets/images/qr_ocr.png")
+            )
           ),
         ],
       ),

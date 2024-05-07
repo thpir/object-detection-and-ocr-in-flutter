@@ -14,8 +14,8 @@ class Slide031 extends StatelessWidget {
             flex: 1,
             child: OrderedList(
               numberOfItems: 4, 
-              activeItem: 1,
-              activeItems: ['Pauze the object detection'],
+              activeItem: 2,
+              activeItems: ['Pauze the object detection', 'Take a picture'],
             ),
           ),
           Expanded(
